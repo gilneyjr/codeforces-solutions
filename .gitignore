@@ -1,4 +1,5 @@
-.vscode
-*.exe
-in
-out
+*
+!*.cpp
+!LICENSE
+!README.md
+
