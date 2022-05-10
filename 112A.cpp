@@ -1,23 +1,17 @@
 #include <iostream>
 #include <string>
-
+#include <algorithm>
 
 using namespace std;
-
-string tolower(const string &str) {
-    string res = "";
-    for (auto c : str)
-        res += tolower(c);
-    return res;
-}
 
 int main()
 {
     string a, b;
     cin >> a >> b;
 
-    int result = tolower(a).compare(tolower(b));
+    transform(a.begin(), a.end(), a.begin(), ::tolower);
+    transform(b.begin(), b.end(), b.begin(), ::tolower);
 
-    cout << (result < 0 ? -1 : (result > 0 ? 1 : 0)) << endl;
+    cout << (a < b ? -1 : (a > b ? 1 : 0)) << endl;
     return 0;
 }
